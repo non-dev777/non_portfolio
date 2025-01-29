@@ -105,4 +105,4 @@ const Strength = () => {
   );
 };
 
-export default Strength;
+export { Strength };

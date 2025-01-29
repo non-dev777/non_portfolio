@@ -1,12 +1,12 @@
 "use client";
 
-import Header from "./components/Header";
-import Profile from "./components/Profile";
-import Works from "./components/Works";
-import Strength from "./components/Strength";
-import Timeline from "./components/Timeline";
-import Contact from "./components/Contact";
-
+import { Header } from "./components/Header";
+import { Profile } from "./components/Profile";
+import { Works } from "./components/Works";
+import { Strength } from "./components/Strength";
+import { Timeline } from "./components/Timeline";
+import { Contact } from "./components/Contact";
+import { Footer } from "./components/Footer";
 export default function Home() {
   return (
     <main>
@@ -18,6 +18,7 @@ export default function Home() {
         <Timeline />
         <Contact />
       </div>
+      <Footer />
     </main>
   );
 }

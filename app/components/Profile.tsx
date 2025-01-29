@@ -19,7 +19,7 @@ const certificates: Certificate[] = [
     image: "/certificates/applied.jpg",
   },
   {
-    name: "情報安全確保支援士",
+    name: "情報処理安全確保支援士",
     image: "/certificates/security.jpg",
   },
 ];
@@ -146,4 +146,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export { Profile };

@@ -210,4 +210,4 @@ const Works = () => {
   );
 };
 
-export default Works;
+export { Works };
