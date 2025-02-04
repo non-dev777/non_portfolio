@@ -25,12 +25,15 @@ interface Work {
     link?: string; // 作品のURL
     points?: string[]; // 工夫した点
     media?: MediaContent[]; // 詳細表示用のメディア（画像/GIF/動画）
+    when?: string; // 制作時期
+    howlong?: string; // 制作期間
     [key: string]: any;
   };
 }
 
 // 作品データ
 const works: Work[] = [
+  // 運営メディアOFFICIAL NON BLOG
   {
     id: "media1",
     title: "OFFICIAL NON BLOG",
@@ -55,19 +58,23 @@ const works: Work[] = [
           type: "gif",
           url: "/works/blog-demo.gif", // 機能のデモGIF
         },
+        {
+          type: "youtube",
+          url: "https://www.youtube.com/embed/YOUR_VIDEO_ID",
+        },
       ],
     },
   },
+  // ポートフォリオサイト
   {
     id: "website1",
     title: "ノンのぽーとふぉりお",
     description:
-      "このポートフォリオサイトです。自分の制作実績をまとめています。",
-    image: "/works/portfolio.jpg",
+      "このポートフォリオサイトです。自分の制作実績をまとめています。Next.jsで作成し、静的サイトとしてデプロイしています。",
+    image: "/works/website/portfolio/1.jpg",
     category: "website",
     details: {
       technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
-      link: "https://example.com",
       points: [
         "モダンな UI/UX デザイン",
         "レスポンシブ対応",
@@ -75,11 +82,46 @@ const works: Work[] = [
       ],
       media: [
         {
-          type: "youtube",
-          url: "https://www.youtube.com/embed/YOUR_VIDEO_ID",
-          youtubeId: "YOUR_VIDEO_ID",
+          type: "image",
+          url: "works/website/portfolio/1.jpg",
         },
       ],
+      howlong: "10日程度",
+    },
+  },
+  // 工務店のデモサイト
+  {
+    id: "website2",
+    title: "WordPress自作テーマによる工務店のサイト",
+    description:
+      "WordPressのテーマを自作し作成しました。工務店のサイトですが、多くの企業にも利用できるようなデザインです。",
+    image: "/works/website/demosite1/demo1.jpg",
+    category: "website",
+    details: {
+      technologies: ["WordPress", "PHP", "MySQL", "Bootstrap"],
+      link: "https://demosite1.official-non.com/",
+      points: [
+        "セキュリティ対策の実装",
+        "カスタム投稿タイプの実装",
+        "SEO対策の実装",
+        "モダンなデザイン",
+        "レスポンシブ対応",
+      ],
+      media: [
+        {
+          type: "image",
+          url: "/works/website/demosite1/demo1.jpg",
+        },
+        {
+          type: "image",
+          url: "/works/website/demosite1/demo2.jpg",
+        },
+        {
+          type: "image",
+          url: "/works/website/demosite1/demo3.jpg",
+        },
+      ],
+      howlong: "1週間",
     },
   },
 ];
@@ -356,7 +398,30 @@ const Works = () => {
                     </div>
                   )}
 
-                  {/* リンクボタン */}
+                  {/* 制作時期 */}
+                  {selectedWork.details.when && (
+                    <div className="mb-6">
+                      <h4 className="text-lg font-semibold text-gray-700 mb-2">
+                        制作時期
+                      </h4>
+                      <p className="text-gray-600">
+                        {selectedWork.details.when}
+                      </p>
+                    </div>
+                  )}
+
+                  {/* 制作期間 */}
+                  {selectedWork.details.howlong && (
+                    <div className="mb-6">
+                      <h4 className="text-lg font-semibold text-gray-700 mb-2">
+                        制作期間
+                      </h4>
+                      <p className="text-gray-600">
+                        {selectedWork.details.howlong}
+                      </p>
+                    </div>
+                  )}
+
                   {selectedWork.details.link && (
                     <div>
                       <a
