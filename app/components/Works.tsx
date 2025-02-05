@@ -86,7 +86,7 @@ const works: Work[] = [
           url: "works/website/portfolio/1.jpg",
         },
       ],
-      howlong: "10日程度",
+      howlong: "5日程度（随時更新中）",
     },
   },
   // 工務店のデモサイト
@@ -122,6 +122,35 @@ const works: Work[] = [
         },
       ],
       howlong: "1週間",
+    },
+  },
+  // サンプル株式会社の求人サイト
+  {
+    id: "website3",
+    title: "企業の求人サイト",
+    description:
+      "企業の求人サイトで作成したものをデモサイト用に置き換えたものです。HTMLとCSSのみで静的な読み込みが早いサイトです。",
+    image: "/works/website/demosite2/demo1.jpg",
+    category: "website",
+    details: {
+      technologies: ["Bootstrap", "一部PHP"],
+      link: "https://demosite2.official-non.com/",
+      points: ["静的で早い", "SEO対策の実装", "レスポンシブ対応"],
+      media: [
+        {
+          type: "image",
+          url: "/works/website/demosite2/demo1.jpg",
+        },
+        {
+          type: "image",
+          url: "/works/website/demosite2/demo2.jpg",
+        },
+        {
+          type: "image",
+          url: "/works/website/demosite2/demo3.jpg",
+        },
+      ],
+      howlong: "3週間〜1ヶ月",
     },
   },
 ];
