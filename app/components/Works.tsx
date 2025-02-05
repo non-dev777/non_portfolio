@@ -75,7 +75,7 @@ const works: Work[] = [
     image: "/works/website/portfolio/1.jpg",
     category: "website",
     details: {
-      technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
       points: [
         "モダンな UI/UX デザイン",
         "レスポンシブ対応",
