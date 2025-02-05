@@ -184,6 +184,25 @@ const works: Work[] = [
       ],
     },
   },
+  // 会員管理システム
+  {
+    id: "system5",
+    title: "会員管理システム",
+    description:
+      "会員管理システムです。会員の登録、削除、更新の基本的な機能に加えて、メール送信機能やPDF出力機能も実装しました。",
+    image: "/works/noimg.jpg",
+    category: "system",
+    details: {
+      technologies: ["PHP", "Laravel", "MySQL", "Bootstrap"],
+      points: [
+        "要件定義、DB設計から実装まで一から最後まで1人で行いました。",
+        "会員と何を話したかをメモする機能もつけました。（折衝履歴）",
+        "会員には有効期限があったので、有効期限が切れるまえに自動でメール送信する機能もつけました。(cronを使用)",
+        "社内で使う必要なデータをPDF出力する機能もつけました。",
+      ],
+      howlong: "2ヶ月程度",
+    },
+  },
   // 楽天ROOM自動削除システム
   {
     id: "system1",
