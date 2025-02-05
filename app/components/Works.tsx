@@ -208,6 +208,29 @@ const works: Work[] = [
       howlong: "3日程度",
     },
   },
+  // 成績表示システム
+  {
+    id: "system4",
+    title: "成績表示システム",
+    description:
+      "データベースから必要なデータを抜き出し、項目に応じた営業成績が表示できるシステムです。",
+    image: "/works/noimg.jpg",
+    category: "system",
+    details: {
+      technologies: ["PHP", "MySQL", "JS", "Chart.js"],
+      points: [
+        "営業社員の所属する支店に応じてグラフの色が変わり、視覚的にわかりやすいようにしました。",
+        "目標値を横ラインで表示し、達成しているかわかりやすくしました。",
+        "個人をクリックすることで個人の詳細の成績を確認することができるようにしました。",
+      ],
+      media: [
+        {
+          type: "image",
+          url: "/works/noimg.jpg",
+        },
+      ],
+    },
+  },
   // YouTubeMP3ダウンローダー
   {
     id: "system2",
