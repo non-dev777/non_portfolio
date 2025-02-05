@@ -192,7 +192,9 @@ const works: Work[] = [
         "複数まとめてダウンロードすることができ、音質も選択することができます。",
         "tkinterを使用してGUIを作成しています。",
       ],
-      other: ["規約に抵触する可能性があります。システムは配布できかねます。"],
+      other: [
+        "YouTubeの利用規約に抵触する可能性があるため、配布もしていなければ、すでにシステムを削除しました。",
+      ],
       media: [
         { type: "gif", url: "/works/system/youtube_dl_mp3/youtube_dl_mp3.gif" },
       ],
