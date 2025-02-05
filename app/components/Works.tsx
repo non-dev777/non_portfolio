@@ -153,6 +153,30 @@ const works: Work[] = [
       howlong: "3週間〜1ヶ月",
     },
   },
+  // 楽天ROOM自動削除システム
+  {
+    id: "system1",
+    title: "楽天ROOM投稿自動削除システム",
+    description:
+      "楽天ROOMで商品を投稿したものを自動削除システムです。楽天ROOMで投稿できる数は2万件までで、2万件に到達すると手動で1つずつ削除しなければいけませんが、このシステムを使用することで自動で削除することができます。",
+    image: "/works/system/delRakutenRoom/delRakutenRoom1.gif",
+    category: "system",
+    details: {
+      technologies: ["Python", "Selenium"],
+      points: [
+        "ネットにいろいろな自動で削除するツールの説明がありますが、どうしても途中で止まったりするので自作しました。",
+        "止まることのないように細かな工夫をしています",
+        "envファイルに楽天IDとパスワードを設定することで、手軽に使うことができます。",
+      ],
+      media: [
+        {
+          type: "gif",
+          url: "/works/system/delRakutenRoom/delRakutenRoom1.gif",
+        },
+      ],
+      howlong: "3日程度",
+    },
+  },
 ];
 
 // カテゴリー一覧
