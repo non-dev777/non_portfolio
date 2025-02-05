@@ -154,6 +154,36 @@ const works: Work[] = [
       howlong: "3週間〜1ヶ月",
     },
   },
+  // BLAIP
+  {
+    id: "system3",
+    title: "BLAIP",
+    description:
+      "ブログの記事生成を手助けするツールです。競合サイト調査とAIで記事を生成するためのプロンプトを作成することができます。",
+    image: "/works/system/blaip/blaip1.jpg",
+    category: "system",
+    details: {
+      technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+      link: "https://blaip.vercel.app/",
+      points: [
+        "競合記事の見出しや文字数、使用画像枚数などを簡単に調査することができます。",
+        "キーワードを入力すだけでおすすめのタイトルも生成することができます。",
+        "プロンプトを作成するだけなので、無料で何度でも利用できます。できあがったプロンプトをAIツールに投げるだけで記事が作成できます。",
+        "マニュアルページも作成し、ユーザーがより使いやすいように工夫しています。",
+        "利用ページで各ボタンにtipsなども配置し、ユーザーがより使いやすいように工夫しています。",
+        "モダンなデザイン",
+      ],
+      media: [
+        {
+          type: "image",
+          url: "/works/system/blaip/blaip1.jpg",
+        },
+      ],
+      other: [
+        "需要があればログイン機能をつけて、できあがるプロンプトを自由にカスタマイズできるようにしたいと考えています。",
+      ],
+    },
+  },
   // 楽天ROOM自動削除システム
   {
     id: "system1",
