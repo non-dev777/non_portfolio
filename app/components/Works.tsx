@@ -27,6 +27,7 @@ interface Work {
     media?: MediaContent[]; // 詳細表示用のメディア（画像/GIF/動画）
     when?: string; // 制作時期
     howlong?: string; // 制作期間
+    other?: string[]; // その他
     [key: string]: any;
   };
 }
@@ -175,6 +176,26 @@ const works: Work[] = [
         },
       ],
       howlong: "3日程度",
+    },
+  },
+  // YouTubeMP3ダウンローダー
+  {
+    id: "system2",
+    title: "YouTubeMP3ダウンローダー",
+    description:
+      "YouTubeの動画をMP3に変換してダウンロードするシステムです。複数まとめてダウンロードすることができ、音質も選択することができます。",
+    category: "system",
+    image: "/works/system/youtube_dl_mp3/youtube_dl_mp3.gif",
+    details: {
+      technologies: ["Python", "yt-dlp", "ffmpeg", "tkinter"],
+      points: [
+        "複数まとめてダウンロードすることができ、音質も選択することができます。",
+        "tkinterを使用してGUIを作成しています。",
+      ],
+      other: ["規約に抵触する可能性があります。システムは配布できかねます。"],
+      media: [
+        { type: "gif", url: "/works/system/youtube_dl_mp3/youtube_dl_mp3.gif" },
+      ],
     },
   },
 ];
@@ -472,6 +493,20 @@ const Works = () => {
                       <p className="text-gray-600">
                         {selectedWork.details.howlong}
                       </p>
+                    </div>
+                  )}
+
+                  {/* その他 */}
+                  {selectedWork.details.other && (
+                    <div className="mb-6">
+                      <h4 className="text-lg font-semibold text-gray-700 mb-2">
+                        その他
+                      </h4>
+                      <ul className="list-disc list-inside text-gray-600 space-y-2">
+                        {selectedWork.details.other.map((other) => (
+                          <li key={other}>{other}</li>
+                        ))}
+                      </ul>
                     </div>
                   )}
 
