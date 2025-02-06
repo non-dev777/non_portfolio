@@ -39,12 +39,13 @@ const timelineItems: TimelineItem[] = [
   {
     year: "2022",
     title: "基本情報技術者試験 合格",
-    description: "IT基礎知識の習得とプログラミングスキルの向上",
+    description: "IT基礎知識の習得。ITエンジニアとしての基礎知識を身につける",
   },
   {
     year: "2023",
     title: "応用情報技術者試験 合格",
-    description: "より高度なIT知識とシステム開発スキルの習得",
+    description:
+      "より高度なIT知識の習得。ITエンジニアとしてのより高度な知識を身につける",
   },
   {
     year: "2024",
