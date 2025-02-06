@@ -81,7 +81,7 @@ const Profile = () => {
         </h2>
 
         <p className="text-gray-600 mb-8 leading-relaxed md:text-center text-left">
-          使いやすさとセキュリティを両立したWebサイト制作が得意です。
+          SEOを意識したWebサイトの作成や、自動化のためのシステム開発が得意です。
           <br />
           営業→SES→社内SE→2025年に独立。
           <br />
