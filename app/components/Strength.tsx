@@ -103,7 +103,8 @@ const Strength = () => {
           className="text-center"
         >
           <SparklesIcon className="h-16 w-16 text-cyan-500 mx-auto mb-6" />
-          <h2 className="text-3xl font-bold text-gray-800 mb-12">Strength</h2>
+          <h2 className="text-3xl font-bold text-gray-800 mb-2">Strength</h2>
+          <p className="text-gray-600 text-lg mb-12">強み・できること</p>
         </motion.div>
 
         <motion.div

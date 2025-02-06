@@ -17,7 +17,8 @@ const Contact = () => {
           viewport={{ once: true }}
         >
           <ChatBubbleLeftRightIcon className="h-16 w-16 text-cyan-500 mx-auto mb-6" />
-          <h2 className="text-3xl font-bold text-gray-800 mb-6">Contact</h2>
+          <h2 className="text-3xl font-bold text-gray-800 mb-2">Contact</h2>
+          <p className="text-gray-600 text-lg mb-6">お問い合わせ</p>
 
           <p className="text-gray-600 mb-8 leading-relaxed max-w-2xl mx-auto">
             Webサイト制作やシステム開発について、どんな些細なことでもお気軽にご相談ください。
