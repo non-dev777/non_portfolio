@@ -7,25 +7,19 @@ const Strength = () => {
   const strengths = [
     {
       icon: ShieldCheckIcon,
-      title: "セキュリティとSEOに強い",
+      title: "セキュアでSEOに強いWebサイト制作",
       description:
-        "情報安全確保支援士の資格を活かしたセキュアなWebサイト制作と、SEOブログ運営経験を活かしたSEO対策を提供します。",
-      points: [
-        "セキュリティ診断と対策",
-        "SEOを意識したコーディング",
-        "パフォーマンス最適化",
-      ],
+        "情報安全確保支援士の資格を活かしたセキュアなWebサイト制作と、SEOブログ運営経験を活かしたSEO対策を提供します。" +
+        "\n\n" +
+        "実績としては個人で活動したYouTubeの登録者は8700人を超え、ブログも月間8万円の収益なども達成しています。",
     },
     {
       icon: RocketLaunchIcon,
       title: "業務効率化システムの開発",
       description:
-        "「これを自動化できたらいいな」「こんなシステムがあったらいいな」という課題に対して、最適なソリューションを提供します。",
-      points: [
-        "業務分析と要件定義",
-        "カスタマイズ可能なシステム設計",
-        "使いやすいUI/UX設計",
-      ],
+        "「これを自動化できたらいいな」「こんなシステムがあったらいいな」という課題に対して、最適なソリューションを提供します。" +
+        "\n\n" +
+        "機能面はもちろん使いやすさを意識したデザインでシステムを提供します。",
     },
   ];
 
@@ -85,18 +79,6 @@ const Strength = () => {
               <p className="text-gray-600 mb-6 leading-relaxed">
                 {strength.description}
               </p>
-
-              <ul className="space-y-3">
-                {strength.points.map((point, pointIndex) => (
-                  <li
-                    key={pointIndex}
-                    className="flex items-center text-gray-600"
-                  >
-                    <span className="h-2 w-2 bg-cyan-500 rounded-full mr-3" />
-                    {point}
-                  </li>
-                ))}
-              </ul>
             </motion.div>
           ))}
         </motion.div>
