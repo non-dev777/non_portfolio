@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Link } from "react-scroll";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,9 +26,15 @@ const Header = () => {
             duration={500}
             className="cursor-pointer h-full py-2"
           >
-            <img
-              src="icons/headerImg.png"
+            <Image
+              src={
+                process.env.NODE_ENV === "production"
+                  ? "/portfolio/icons/headerImg.png"
+                  : "/icons/headerImg.png"
+              }
               alt="ノンのポートフォリオサイト"
+              width={150}
+              height={48}
               className="h-full w-auto object-contain hover:opacity-80 transition-opacity"
             />
           </Link>

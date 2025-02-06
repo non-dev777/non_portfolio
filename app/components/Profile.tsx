@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { XMarkIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
 
 interface Certificate {
   name: string;
@@ -12,15 +13,24 @@ interface Certificate {
 const certificates: Certificate[] = [
   {
     name: "基本情報技術者",
-    image: "/certificates/basic.jpg",
+    image:
+      process.env.NODE_ENV === "production"
+        ? "/portfolio/certificates/basic.jpg"
+        : "/certificates/basic.jpg",
   },
   {
     name: "応用情報技術者",
-    image: "/certificates/applied.jpg",
+    image:
+      process.env.NODE_ENV === "production"
+        ? "/portfolio/certificates/applied.jpg"
+        : "/certificates/applied.jpg",
   },
   {
     name: "情報処理安全確保支援士",
-    image: "/certificates/security.jpg",
+    image:
+      process.env.NODE_ENV === "production"
+        ? "/portfolio/certificates/security.jpg"
+        : "/certificates/security.jpg",
   },
 ];
 
@@ -35,9 +45,15 @@ const Profile = () => {
     >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="mb-8">
-          <img
-            src="icons/non_profile.png"
+          <Image
+            src={
+              process.env.NODE_ENV === "production"
+                ? "/portfolio/icons/non_profile.png"
+                : "/icons/non_profile.png"
+            }
             alt="Profile Icon"
+            width={150}
+            height={150}
             className="w-[150px] h-[150px] mx-auto rounded-full border-4 border-cyan-200 object-cover"
           />
         </div>
@@ -134,9 +150,11 @@ const Profile = () => {
                 >
                   <XMarkIcon className="h-6 w-6 text-gray-600" />
                 </button>
-                <img
+                <Image
                   src={selectedCertificate.image}
                   alt={selectedCertificate.name}
+                  width={600}
+                  height={400}
                   className="w-full max-w-[600px] rounded-lg"
                 />
               </motion.div>

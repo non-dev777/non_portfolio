@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 // メディアコンテンツの型定義
 // type: 表示するメディアの種類（画像/GIF/YouTube）
@@ -31,6 +32,10 @@ interface Work {
   };
 }
 
+const getImagePath = (path: string) => {
+  return process.env.NODE_ENV === "production" ? `/portfolio${path}` : path;
+};
+
 // 作品データ
 const works: Work[] = [
   // 運営メディアOFFICIAL NON BLOG
@@ -39,7 +44,7 @@ const works: Work[] = [
     title: "OFFICIAL NON BLOG",
     description:
       "プログラミング・システム開発に関することや自身の考えや活動を発信しているメインのブログです。",
-    image: "/works/media/officialnonblog/officialnonblog.jpg", // サムネイル用の画像
+    image: getImagePath("/works/media/officialnonblog/officialnonblog.jpg"),
     category: "media",
     details: {
       technologies: ["WordPress", "PHP", "MySQL"],
@@ -50,11 +55,10 @@ const works: Work[] = [
         "WordPressで作成しています。",
         "有料テーマのAffingerを使用しています。",
       ],
-      // 詳細表示用のメディア
       media: [
         {
           type: "image",
-          url: "/works/media/officialnonblog/officialnonblog.jpg", // 詳細な画像
+          url: getImagePath("/works/media/officialnonblog/officialnonblog.jpg"),
         },
       ],
     },
@@ -65,7 +69,7 @@ const works: Work[] = [
     title: "高校数学解説YouTube",
     description:
       "高校数学の解説動画をアップしているチャンネルです。チャンネル登録者8700人程度です。現在は活動を休止中です。",
-    image: "/works/media/mathkenYouTube/mathkenYouTube.jpg",
+    image: getImagePath("/works/media/mathkenYouTube/mathkenYouTube.jpg"),
     category: "media",
     details: {
       link: "https://www.youtube.com/@math_ken",
@@ -76,7 +80,7 @@ const works: Work[] = [
       media: [
         {
           type: "image",
-          url: "/works/media/mathkenYouTube/mathkenYouTube.jpg",
+          url: getImagePath("/works/media/mathkenYouTube/mathkenYouTube.jpg"),
         },
         {
           type: "youtube",
@@ -96,7 +100,7 @@ const works: Work[] = [
     title: "高校数学解説ブログ",
     description:
       "高校数学の解説をしているブログです。YouTubeで発信した内容を元に記事を作成しています。",
-    image: "/works/media/mathkenblog/mathkenblog.jpg",
+    image: getImagePath("/works/media/mathkenblog/mathkenblog.jpg"),
     category: "media",
     details: {
       link: "https://math-ken.com",
@@ -110,7 +114,7 @@ const works: Work[] = [
       media: [
         {
           type: "image",
-          url: "/works/media/mathkenblog/mathkenblog.jpg",
+          url: getImagePath("/works/media/mathkenblog/mathkenblog.jpg"),
         },
       ],
       other: ["現在は活動を休止中です。"],
@@ -122,7 +126,7 @@ const works: Work[] = [
     title: "ノンのぽーとふぉりお",
     description:
       "このポートフォリオサイトです。自分の制作実績をまとめています。Next.jsで作成し、静的サイトとしてデプロイしています。",
-    image: "/works/website/portfolio/1.jpg",
+    image: getImagePath("/works/website/portfolio/1.jpg"),
     category: "website",
     details: {
       technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
@@ -134,7 +138,7 @@ const works: Work[] = [
       media: [
         {
           type: "image",
-          url: "works/website/portfolio/1.jpg",
+          url: getImagePath("/works/website/portfolio/1.jpg"),
         },
       ],
       howlong: "5日程度（随時更新中）",
@@ -146,7 +150,7 @@ const works: Work[] = [
     title: "WordPress自作テーマによる工務店のサイト",
     description:
       "WordPressのテーマを自作し作成しました。工務店のサイトですが、多くの企業にも利用できるようなデザインです。",
-    image: "/works/website/demosite1/demo1.jpg",
+    image: getImagePath("/works/website/demosite1/demo1.jpg"),
     category: "website",
     details: {
       technologies: ["WordPress", "PHP", "MySQL", "Bootstrap"],
@@ -161,15 +165,15 @@ const works: Work[] = [
       media: [
         {
           type: "image",
-          url: "/works/website/demosite1/demo1.jpg",
+          url: getImagePath("/works/website/demosite1/demo1.jpg"),
         },
         {
           type: "image",
-          url: "/works/website/demosite1/demo2.jpg",
+          url: getImagePath("/works/website/demosite1/demo2.jpg"),
         },
         {
           type: "image",
-          url: "/works/website/demosite1/demo3.jpg",
+          url: getImagePath("/works/website/demosite1/demo3.jpg"),
         },
       ],
       howlong: "1週間",
@@ -181,7 +185,7 @@ const works: Work[] = [
     title: "企業の求人サイト",
     description:
       "企業の求人サイトで作成したものをデモサイト用に置き換えたものです。HTMLとCSSのみで静的な読み込みが早いサイトです。",
-    image: "/works/website/demosite2/demo1.jpg",
+    image: getImagePath("/works/website/demosite2/demo1.jpg"),
     category: "website",
     details: {
       technologies: ["Bootstrap", "一部PHP"],
@@ -190,15 +194,15 @@ const works: Work[] = [
       media: [
         {
           type: "image",
-          url: "/works/website/demosite2/demo1.jpg",
+          url: getImagePath("/works/website/demosite2/demo1.jpg"),
         },
         {
           type: "image",
-          url: "/works/website/demosite2/demo2.jpg",
+          url: getImagePath("/works/website/demosite2/demo2.jpg"),
         },
         {
           type: "image",
-          url: "/works/website/demosite2/demo3.jpg",
+          url: getImagePath("/works/website/demosite2/demo3.jpg"),
         },
       ],
       howlong: "3週間〜1ヶ月",
@@ -210,7 +214,7 @@ const works: Work[] = [
     title: "BLAIP",
     description:
       "ブログの記事生成を手助けするツールです。競合サイト調査とAIで記事を生成するためのプロンプトを作成することができます。",
-    image: "/works/system/blaip/blaip1.jpg",
+    image: getImagePath("/works/system/blaip/blaip1.jpg"),
     category: "system",
     details: {
       technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
@@ -226,7 +230,7 @@ const works: Work[] = [
       media: [
         {
           type: "image",
-          url: "/works/system/blaip/blaip1.jpg",
+          url: getImagePath("/works/system/blaip/blaip1.jpg"),
         },
       ],
       other: [
@@ -240,7 +244,7 @@ const works: Work[] = [
     title: "会員管理システム",
     description:
       "会員管理システムです。会員の登録、削除、更新の基本的な機能に加えて、メール送信機能やPDF出力機能も実装しました。",
-    image: "/works/noimg.jpg",
+    image: getImagePath("/works/noimg.jpg"),
     category: "system",
     details: {
       technologies: ["PHP", "Laravel", "MySQL", "Bootstrap"],
@@ -259,7 +263,7 @@ const works: Work[] = [
     title: "Notion To X",
     description:
       "NotionのDBに登録したものを毎日自動でXで投稿できるシステムです。運営メディアの高校数学解説YouTubeの宣伝のために作成しました。",
-    image: "/works/system/notionToX/notionToX.jpg",
+    image: getImagePath("/works/system/notionToX/notionToX.jpg"),
     category: "system",
     details: {
       technologies: ["TypeScript", "Notion API", "X API"],
@@ -271,7 +275,7 @@ const works: Work[] = [
       media: [
         {
           type: "image",
-          url: "/works/system/notionToX/notionToX.jpg",
+          url: getImagePath("/works/system/notionToX/notionToX.jpg"),
         },
       ],
       other: [
@@ -285,7 +289,9 @@ const works: Work[] = [
     title: "Notion To Instagram",
     description:
       "NotionのDBに登録したものを毎日自動でInstagramで投稿できるシステムです。運営メディアの高校数学解説YouTubeの宣伝のために作成しました。",
-    image: "/works/system/notionToInstagram/notionToInstagram.jpg",
+    image: getImagePath(
+      "/works/system/notionToInstagram/notionToInstagram.jpg"
+    ),
     category: "system",
     details: {
       technologies: [
@@ -303,7 +309,9 @@ const works: Work[] = [
       media: [
         {
           type: "image",
-          url: "/works/system/notionToInstagram/notionToInstagram.jpg",
+          url: getImagePath(
+            "/works/system/notionToInstagram/notionToInstagram.jpg"
+          ),
         },
       ],
       other: [
@@ -317,7 +325,7 @@ const works: Work[] = [
     title: "楽天ROOM投稿自動削除システム",
     description:
       "楽天ROOMで商品を投稿したものを自動削除システムです。楽天ROOMで投稿できる数は2万件までで、2万件に到達すると手動で1つずつ削除しなければいけませんが、このシステムを使用することで自動で削除することができます。",
-    image: "/works/system/delRakutenRoom/delRakutenRoom1.gif",
+    image: getImagePath("/works/system/delRakutenRoom/delRakutenRoom1.gif"),
     category: "system",
     details: {
       technologies: ["Python", "Selenium"],
@@ -329,7 +337,7 @@ const works: Work[] = [
       media: [
         {
           type: "gif",
-          url: "/works/system/delRakutenRoom/delRakutenRoom1.gif",
+          url: getImagePath("/works/system/delRakutenRoom/delRakutenRoom1.gif"),
         },
       ],
       howlong: "3日程度",
@@ -341,7 +349,7 @@ const works: Work[] = [
     title: "成績表示システム",
     description:
       "データベースから必要なデータを抜き出し、項目に応じた営業成績が表示できるシステムです。",
-    image: "/works/noimg.jpg",
+    image: getImagePath("/works/noimg.jpg"),
     category: "system",
     details: {
       technologies: ["PHP", "MySQL", "JS", "Chart.js"],
@@ -353,7 +361,7 @@ const works: Work[] = [
       media: [
         {
           type: "image",
-          url: "/works/noimg.jpg",
+          url: getImagePath("/works/noimg.jpg"),
         },
       ],
     },
@@ -365,7 +373,7 @@ const works: Work[] = [
     description:
       "YouTubeの動画をMP3に変換してダウンロードするシステムです。複数まとめてダウンロードすることができ、音質も選択することができます。",
     category: "system",
-    image: "/works/system/youtube_dl_mp3/youtube_dl_mp3.gif",
+    image: getImagePath("/works/system/youtube_dl_mp3/youtube_dl_mp3.gif"),
     details: {
       technologies: ["Python", "yt-dlp", "ffmpeg", "tkinter"],
       points: [
@@ -376,7 +384,10 @@ const works: Work[] = [
         "YouTubeの利用規約に抵触する可能性があるため、配布もしていなければ、すでにシステムを削除しました。",
       ],
       media: [
-        { type: "gif", url: "/works/system/youtube_dl_mp3/youtube_dl_mp3.gif" },
+        {
+          type: "gif",
+          url: getImagePath("/works/system/youtube_dl_mp3/youtube_dl_mp3.gif"),
+        },
       ],
     },
   },
@@ -412,9 +423,11 @@ const MediaDisplay = ({ content }: { content: MediaContent }) => {
       // 画像またはGIFの表示
       return (
         <div className="relative w-full flex justify-center">
-          <img
+          <Image
             src={content.url}
             alt="詳細画像"
+            width={800}
+            height={600}
             className="max-w-full max-h-[60vh] object-contain"
           />
         </div>
@@ -488,13 +501,15 @@ const Works = () => {
               className="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer transform transition hover:scale-105"
               onClick={() => {
                 setSelectedWork(work);
-                setCurrentMediaIndex(0); // メディアのインデックスをリセット
+                setCurrentMediaIndex(0);
               }}
             >
               <div className="relative h-48">
-                <img
+                <Image
                   src={work.image}
                   alt={work.title}
+                  width={400}
+                  height={192}
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -603,9 +618,11 @@ const Works = () => {
                   ) : (
                     // メディアが設定されていない場合はサムネイル画像を表示
                     <div className="relative w-full flex justify-center">
-                      <img
+                      <Image
                         src={selectedWork.image}
                         alt={selectedWork.title}
+                        width={800}
+                        height={600}
                         className="max-w-full max-h-[60vh] object-contain"
                       />
                     </div>

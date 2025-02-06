@@ -12,13 +12,18 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const iconPath =
+  process.env.NODE_ENV === "production"
+    ? "/portfolio/icons/non_profile.png"
+    : "/icons/non_profile.png";
+
 export const metadata: Metadata = {
   title: "ノンのポートフォリオサイト",
   description: "Web制作/システム開発のポートフォリオサイト",
   icons: {
-    icon: "/icons/non_profile.png",
-    shortcut: "/icons/non_profile.png",
-    apple: "/icons/non_profile.png",
+    icon: iconPath,
+    shortcut: iconPath,
+    apple: iconPath,
   },
 };
 
