@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ClockIcon } from "@heroicons/react/24/outline";
 
 interface TimelineItem {
   year: string;
@@ -87,9 +88,16 @@ const Timeline = () => {
   return (
     <section id="timeline" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
-          Timeline
-        </h2>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <ClockIcon className="h-16 w-16 text-cyan-500 mx-auto mb-6" />
+          <h2 className="text-3xl font-bold text-gray-800 mb-12">Timeline</h2>
+        </motion.div>
 
         <motion.div
           variants={containerVariants}

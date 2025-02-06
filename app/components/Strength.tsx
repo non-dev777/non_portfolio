@@ -1,7 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ShieldCheckIcon, RocketLaunchIcon } from "@heroicons/react/24/outline";
+import {
+  ShieldCheckIcon,
+  RocketLaunchIcon,
+  SparklesIcon,
+} from "@heroicons/react/24/outline";
 
 type CanDos = {
   [key: string]: string[];
@@ -91,9 +95,16 @@ const Strength = () => {
       className="py-20 bg-gradient-to-b from-white to-cyan-50"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
-          Strength
-        </h2>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <SparklesIcon className="h-16 w-16 text-cyan-500 mx-auto mb-6" />
+          <h2 className="text-3xl font-bold text-gray-800 mb-12">Strength</h2>
+        </motion.div>
 
         <motion.div
           variants={containerVariants}

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { FolderIcon } from "@heroicons/react/24/outline";
 
 // メディアコンテンツの型定義
 // type: 表示するメディアの種類（画像/GIF/YouTube）
@@ -469,9 +470,16 @@ const Works = () => {
   return (
     <section id="works" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
-          Works
-        </h2>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <FolderIcon className="h-16 w-16 text-cyan-500 mx-auto mb-6" />
+          <h2 className="text-3xl font-bold text-gray-800 mb-12">Works</h2>
+        </motion.div>
 
         {/* カテゴリー選択ボタン */}
         <div className="flex justify-center space-x-4 mb-12">
