@@ -15,6 +15,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "ノンのポートフォリオサイト",
   description: "Web制作/システム開発のポートフォリオサイト",
+  icons: {
+    icon: "/icons/non_profile.png",
+    shortcut: "/icons/non_profile.png",
+    apple: "/icons/non_profile.png",
+  },
 };
 
 export default function RootLayout({
