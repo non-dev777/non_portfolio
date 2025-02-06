@@ -28,7 +28,6 @@ interface Work {
     when?: string; // 制作時期
     howlong?: string; // 制作期間
     other?: string[]; // その他
-    [key: string]: any;
   };
 }
 
