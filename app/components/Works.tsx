@@ -38,32 +38,83 @@ const works: Work[] = [
   {
     id: "media1",
     title: "OFFICIAL NON BLOG",
-    description: "セキュリティ・プログラミング情報を発信するブログメディア",
-    image: "/works/blog.jpg", // サムネイル用の画像
+    description:
+      "プログラミング・システム開発に関することや自身の考えや活動を発信しているメインのブログです。",
+    image: "/works/media/officialnonblog/officialnonblog.jpg", // サムネイル用の画像
     category: "media",
     details: {
       technologies: ["WordPress", "PHP", "MySQL"],
-      link: "https://example.com",
+      link: "https://official-non.com",
       points: [
-        "SEO対策による月間10万PV達成",
-        "セキュリティ対策の実装",
-        "パフォーマンス最適化",
+        "アフィリエイトで月収8万円を達成",
+        "集客はSEO対策が中心",
+        "WordPressで作成しています。",
+        "有料テーマのAffingerを使用しています。",
       ],
       // 詳細表示用のメディア
       media: [
         {
           type: "image",
-          url: "/works/blog-detail.jpg", // 詳細な画像
+          url: "/works/media/officialnonblog/officialnonblog.jpg", // 詳細な画像
         },
+      ],
+    },
+  },
+  // 運営メディア math-ken YouTube
+  {
+    id: "media2",
+    title: "高校数学解説YouTube",
+    description:
+      "高校数学の解説動画をアップしているチャンネルです。チャンネル登録者8700人程度です。現在は活動を休止中です。",
+    image: "/works/media/mathkenYouTube/mathkenYouTube.jpg",
+    category: "media",
+    details: {
+      link: "https://www.youtube.com/@math_ken",
+      points: [
+        "チャンネル登録者8700人程度まで伸ばすことができました。",
+        "高校数学が好きなので、その延長で会社員時代に副業でスタートしました。",
+      ],
+      media: [
         {
-          type: "gif",
-          url: "/works/blog-demo.gif", // 機能のデモGIF
+          type: "image",
+          url: "/works/media/mathkenYouTube/mathkenYouTube.jpg",
         },
         {
           type: "youtube",
-          url: "https://www.youtube.com/embed/YOUR_VIDEO_ID",
+          url: "https://www.youtube.com/embed/Pybf70zheQw",
+        },
+        {
+          type: "youtube",
+          url: "https://www.youtube.com/embed/GJOupRIKEpY",
         },
       ],
+      other: ["現在は活動を休止中です。"],
+    },
+  },
+  // 運営メディア math-ken ブログ
+  {
+    id: "media3",
+    title: "高校数学解説ブログ",
+    description:
+      "高校数学の解説をしているブログです。YouTubeで発信した内容を元に記事を作成しています。",
+    image: "/works/media/mathkenblog/mathkenblog.jpg",
+    category: "media",
+    details: {
+      link: "https://math-ken.com",
+      technologies: ["WordPress", "PHP", "MySQL"],
+      points: [
+        "月間2000PV程度です。",
+        "ほぼSEOのみで集客しています。（一部YouTubeからの流入もあります。）",
+        "WordPressで作成しています。",
+        "無料テーマのCocoonを使用しています。",
+      ],
+      media: [
+        {
+          type: "image",
+          url: "/works/media/mathkenblog/mathkenblog.jpg",
+        },
+      ],
+      other: ["現在は活動を休止中です。"],
     },
   },
   // ポートフォリオサイト
@@ -197,10 +248,68 @@ const works: Work[] = [
       points: [
         "要件定義、DB設計から実装まで一から最後まで1人で行いました。",
         "会員と何を話したかをメモする機能もつけました。（折衝履歴）",
-        "会員には有効期限があったので、有効期限が切れるまえに自動でメール送信する機能もつけました。(cronを使用)",
+        "会員には有効期限があったので、有効期限が切れる前に自動でメール送信する機能もつけました。(cronを使用)",
         "社内で使う必要なデータをPDF出力する機能もつけました。",
       ],
       howlong: "2ヶ月程度",
+    },
+  },
+  // Notion To X
+  {
+    id: "system6",
+    title: "Notion To X",
+    description:
+      "NotionのDBに登録したものを毎日自動でXで投稿できるシステムです。運営メディアの高校数学解説YouTubeの宣伝のために作成しました。",
+    image: "/works/system/notionToX/notionToX.jpg",
+    category: "system",
+    details: {
+      technologies: ["TypeScript", "Notion API", "X API"],
+      link: "https://x.com/math_ken_777",
+      points: [
+        "NotionのDBに登録したものを毎日自動でXで投稿できます。",
+        "GitHub Actionsを使用して毎日無料で自動で実行しています。",
+      ],
+      media: [
+        {
+          type: "image",
+          url: "/works/system/notionToX/notionToX.jpg",
+        },
+      ],
+      other: [
+        "YouTubeの活動は休止中ですが、Xでの自動投稿は動かせ続けています。",
+      ],
+    },
+  },
+  // Notion To Instagram
+  {
+    id: "system7",
+    title: "Notion To Instagram",
+    description:
+      "NotionのDBに登録したものを毎日自動でInstagramで投稿できるシステムです。運営メディアの高校数学解説YouTubeの宣伝のために作成しました。",
+    image: "/works/system/notionToInstagram/notionToInstagram.jpg",
+    category: "system",
+    details: {
+      technologies: [
+        "TypeScript",
+        "Notion API",
+        "Instagram API",
+        "Cloudinary API",
+      ],
+      link: "https://www.instagram.com/math_ken_777/",
+      points: [
+        "NotionのDBに登録したものを毎日自動でInstagramで投稿できます。",
+        "GitHub Actionsを使用して毎日無料で自動で実行しています。",
+        "Notionで管理している画像を直接Instagramで投稿するのはInstagramのAPIに制限があったため、画像をCloudinaryに保存してそこから投稿するようにしています。",
+      ],
+      media: [
+        {
+          type: "image",
+          url: "/works/system/notionToInstagram/notionToInstagram.jpg",
+        },
+      ],
+      other: [
+        "YouTubeの活動は休止中ですが、Instagramでの自動投稿は動かせ続けています。",
+      ],
     },
   },
   // 楽天ROOM自動削除システム
@@ -532,11 +641,11 @@ const Works = () => {
                     </div>
                   )}
 
-                  {/* 工夫した点 */}
+                  {/* ポイント */}
                   {selectedWork.details.points && (
                     <div className="mb-6">
                       <h4 className="text-lg font-semibold text-gray-700 mb-2">
-                        工夫した点
+                        ポイント
                       </h4>
                       <ul className="list-disc list-inside text-gray-600 space-y-2">
                         {selectedWork.details.points.map((point) => (
