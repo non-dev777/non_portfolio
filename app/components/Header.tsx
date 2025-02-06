@@ -10,7 +10,7 @@ const Header = () => {
   const menuItems = [
     { name: "プロフィール", to: "profile" },
     { name: "制作実績", to: "works" },
-    { name: "強み", to: "strength" },
+    { name: "強み・できること", to: "strength" },
     { name: "経歴", to: "timeline" },
     { name: "お問い合わせ", to: "contact" },
   ];
