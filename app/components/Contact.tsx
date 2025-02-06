@@ -24,6 +24,10 @@ const Contact = () => {
             あなたの課題に最適なソリューションを一緒に見つけていきましょう。
           </p>
 
+          <p className="text-gray-600 mb-8 leading-relaxed max-w-2xl mx-auto font-bold">
+            無料でお見積りしております。お気軽にお問い合わせください。
+          </p>
+
           <motion.a
             href="https://example.com/contact"
             target="_blank"
