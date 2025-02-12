@@ -30,7 +30,7 @@ const Contact = () => {
           </p>
 
           <motion.a
-            href="https://example.com/contact"
+            href="https://official-non.com/contact"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-cyan-500 text-white px-8 py-3 rounded-full hover:bg-cyan-600 transition-colors shadow-lg hover:shadow-xl"
