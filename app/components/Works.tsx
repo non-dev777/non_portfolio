@@ -25,6 +25,7 @@ interface Work {
   details: {
     technologies?: string[]; // 使用技術一覧
     link?: string; // 作品のURL
+    links?: { label: string; url: string }[]; // 複数のリンク
     points?: string[]; // 工夫した点
     media?: MediaContent[]; // 詳細表示用のメディア（画像/GIF/動画）
     when?: string; // 制作時期
@@ -207,6 +208,44 @@ const works: Work[] = [
         },
       ],
       howlong: "3週間〜1ヶ月",
+    },
+  },
+  // PhotoPoem
+  {
+    id: "system8",
+    title: "PhotoPoem",
+    description:
+      "写真を選択するだけでAIが美しい詩を詠んでくれるスマホアプリ。iOS版とAndroid版をリリースしています。",
+    image: getImagePath("/works/system/photopoem/photopoem.png"),
+    category: "system",
+    details: {
+      technologies: ["React Native", "Firebase", "Gemini API"],
+      links: [
+        { label: "公式サイト", url: "https://photo-poem-ai.netlify.app/" },
+        {
+          label: "App Store",
+          url: "https://apps.apple.com/us/app/photopoem/id6752734426",
+        },
+        {
+          label: "Google Play",
+          url: "https://play.google.com/store/apps/details?id=com.officialnon.photopoem",
+        },
+      ],
+      points: [
+        "ワンタップで簡単に詩を生成できる",
+        "カード型の画像を簡単に保存・共有できる",
+        "5言語対応（日本語、英語、中文、韓国語、ヒンディー語）",
+        "俳句、短歌、自由詩、リリックなど多彩なスタイルをサポート",
+        "日々の思い出を特別なものにする毎日のリマインダー機能",
+        "作品を管理できるギャラリー機能",
+      ],
+      media: [
+        {
+          type: "image",
+          url: getImagePath("/works/system/photopoem/photopoem.png"),
+        },
+      ],
+      howlong: "1ヶ月半程度",
     },
   },
   // BLAIP
@@ -728,6 +767,22 @@ const Works = () => {
                       >
                         サイトを見る
                       </a>
+                    </div>
+                  )}
+
+                  {selectedWork.details.links && (
+                    <div className="flex flex-wrap gap-3">
+                      {selectedWork.details.links.map((link) => (
+                        <a
+                          key={link.url}
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-block bg-cyan-500 text-white px-6 py-2 rounded-full hover:bg-cyan-600 transition-colors"
+                        >
+                          {link.label}
+                        </a>
+                      ))}
                     </div>
                   )}
                 </div>
